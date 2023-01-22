@@ -1,0 +1,221 @@
+{
+  "submenu-1-item-1": {
+    "load": {
+      "name": "外部荷载设计值",
+      "ticks": [
+        "外部竖向荷载V<sub>LRP</sub>（N）",
+        "外部水平向荷载H<sub>LRP</sub>（N）",
+        "外部倾覆荷载M<sub>LRP</sub>（N）"
+      ],
+      "refs": [{ "Vlrp": "" }, { "Hlrp": "" }, { "Mlrp": "" }]
+    },
+    "scale": {
+      "name": "筒型基础结构尺寸",
+      "ticks": ["基础直径D（m）", "基础埋深h（m）"],
+      "refs": [{ "D": "" }, { "h": "" }]
+    },
+    "soil": {
+      "name": "地基土体物理力学参数",
+      "ticks": [
+        "泥面处土体不排水抗剪强度s<sub>um</sub>（Pa）",
+        "土体不排水强度随深度的变化梯度k（Pa/m）",
+        "土体浮容重γ’（N/m<sup>3</sup>）"
+      ],
+      "refs": [{ "sum": "" }, { "k": "" }, { "gama": "" }]
+    },
+    "params": {
+      "name": "其他参数及系数",
+      "ticks": [
+        "筒-土相互作用系数α",
+        "筒型基础浮重荷载W<sub>bucket</sub>（N）",
+        "材料系数γ<sub>m</sub>"
+      ],
+      "refs": [{ "alpha": "" }, { "Wbucket": "" }, { "gamam": "1.25" }]
+    }
+  },
+  "submenu-1-item-2": {
+    "load": {
+      "name": "外部荷载设计值",
+      "ticks": [
+        "外部竖向荷载V<sub>LRP</sub>（N）",
+        "外部水平向荷载H<sub>LRP</sub>（N）",
+        "外部倾覆荷载M<sub>LRP</sub>（N）"
+      ],
+      "refs": [{ "Vlrp": "" }, { "Hlrp": "" }, { "Mlrp": "" }]
+    },
+    "scale": {
+      "name": "筒型基础结构尺寸",
+      "ticks": ["基础直径D（m）", "基础埋深h（m）"],
+      "refs": [{ "D": "" }, { "h": "" }]
+    },
+    "soil": {
+      "name": "地基土体物理力学参数",
+      "ticks": [
+        "土体有效内摩擦角φ’（°）",
+        "土体浮容重γ’（N/m<sup>3</sup>）",
+        "水平向土压力系数K"
+      ],
+      "refs": [{ "fai": "" }, { "gama": "" }, { "K": "" }]
+    },
+    "params": {
+      "name": "其他参数及系数",
+      "ticks": [
+        "筒-土接触面外摩擦角δ（°）",
+        "筒型基础浮重荷载W<sub>bucket</sub>（N）",
+        "材料系数γ<sub>m</sub>",
+        "系数d<sub>γ</sub>"
+      ],
+      "refs": [
+        { "deta": "" },
+        { "Wbucket": "" },
+        { "gamam": "1.15" },
+        { "dgama": "1" }
+      ]
+    }
+  },
+  "submenu-2-item-1": {
+    "load": {
+      "name": "外部荷载设计值",
+      "ticks": ["外部水平荷载H<sub>LRP</sub>（N）"],
+      "refs": [{ "Hlrp": "" }]
+    },
+    "scale": {
+      "name": "筒型基础结构尺寸",
+      "ticks": ["基础直径D（m）", "基础埋深h（m）"],
+      "refs": [{ "D": "" }, { "h": "" }]
+    },
+    "soil": {
+      "name": "地基土体物理力学参数",
+      "ticks": [
+        "泥面处土体不排水抗剪强度s<sub>um</sub>（Pa）",
+        "土体不排水强度随深度的变化梯度k（Pa/m）",
+        "土体浮容重γ’（N/m<sup>3</sup>）"
+      ],
+      "refs": [{ "sum": "" }, { "k": "" }, { "gama": "" }]
+    },
+    "params": {
+      "name": "其他参数及系数",
+      "ticks": ["材料系数γ<sub>m</sub>"],
+      "refs": [{ "gamam": "1.25" }]
+    }
+  },
+  "submenu-2-item-2": {
+    "load": {
+      "name": "外部荷载设计值",
+      "ticks": [
+        "外部竖向荷载V<sub>LRP</sub>（N）",
+        "外部水平向荷载H<sub>LRP</sub>（N）"
+      ],
+      "refs": [{ "Vlrp": "" }, { "Hlrp": "" }]
+    },
+    "scale": {
+      "name": "筒型基础结构尺寸",
+      "ticks": ["基础直径D（m）", "基础埋深h（m）"],
+      "refs": [{ "D": "" }, { "h": "" }]
+    },
+    "soil": {
+      "name": "地基土体物理力学参数",
+      "ticks": [
+        "土体有效内摩擦角φ’（°）",
+        "土体浮容重γ’（N/m<sup>3</sup>）",
+        "水平向土压力系数K"
+      ],
+      "refs": [{ "fai": "" }, { "gama": "" }, { "K": "" }]
+    },
+    "params": {
+      "name": "其他参数及系数",
+      "ticks": [
+        "筒-土接触面外摩擦角δ（°）",
+        "筒型基础浮重荷载W<sub>bucket</sub>（N）",
+        "材料系数γ<sub>m</sub>"
+      ],
+      "refs": [{ "deta": "" }, { "Wbucket": "" }, { "gamam": "1.15" }]
+    }
+  },
+  "submenu-3-item-1": {
+    "load": {
+      "name": "外部荷载设计值",
+      "ticks": ["外部上拔荷载V<sub>LRP</sub>（N）"],
+      "refs": [{ "Vlrp": "" }]
+    },
+    "scale": {
+      "name": "筒型基础结构尺寸",
+      "ticks": ["基础直径D（m）", "基础埋深h（m）"],
+      "refs": [{ "D": "" }, { "h": "" }]
+    },
+    "soil": {
+      "name": "地基土体物理力学参数",
+      "ticks": [
+        "泥面处土体不排水抗剪强度s<sub>um</sub>（Pa）",
+        "土体不排水强度随深度的变化梯度k（Pa/m）",
+        "土体容重γ（N/m<sup>3</sup>）"
+      ],
+      "refs": [{ "sum": "" }, { "k": "" }, { "gama": "" }]
+    },
+    "params": {
+      "name": "其他参数及系数",
+      "ticks": [
+        "筒-土相互作用系数α",
+        "筒型基础浮重荷载W<sub>bucket</sub>（N）",
+        "水深h<sub>w</sub>（m）",
+        "空穴压力p<sub>void</sub>（Pa）",
+        "大气压强p<sub>a</sub>（Pa）",
+        "水体容重γ<sub>w</sub>（N/m<sup>3</sup>）",
+        "材料系数γ<sub>m</sub>"
+      ],
+      "refs": [
+        { "alpha": "" },
+        { "Wbucket": "" },
+        { "hw": "" },
+        { "pvoid": "" },
+        { "pa": "100000" },
+        { "gamaw": "10000" },
+        { "gamam": "1.25" }
+      ]
+    }
+  },
+  "submenu-3-item-2": {
+    "load": {
+      "name": "外部荷载设计值",
+      "ticks": ["外部上拔荷载V<sub>LRP</sub>（N）"],
+      "refs": [{ "Vlrp": "" }]
+    },
+    "scale": {
+      "name": "筒型基础结构尺寸",
+      "ticks": ["基础直径D（m）", "基础埋深h（m）"],
+      "refs": [{ "D": "" }, { "h": "" }]
+    },
+    "soil": {
+      "name": "地基土体物理力学参数",
+      "ticks": [
+        "土体容重γ（N/m<sup>3</sup>）",
+        "土体浮容重γ’（N/m<sup>3</sup>）",
+        "水平向土压力系数K"
+      ],
+      "refs": [{ "gama": "" }, { "gama$": "" }, { "K": "" }]
+    },
+    "params": {
+      "name": "其他参数及系数",
+      "ticks": [
+        "筒-土接触面外摩擦角δ（°）",
+        "筒型基础浮重荷载W<sub>bucket</sub>（N）",
+        "水深h<sub>w</sub>（m）",
+        "基底裂缝处产生的空穴压力p<sub>void,base</sub>（Pa）",
+        "顶盖裂缝出产生的空穴压力p<sub>void,lid</sub>（Pa）",
+        "大气压强pa（Pa）",
+        "水体容重γ<sup>w</sup>（N/m<sup>3</sup>）",
+        "材料系数γ<sub>m</sub>"
+      ],
+      "refs": [
+        { "deta": "" },
+        { "Wbucket": "" },
+        { "hw": "" },
+        { "pvoidBase": "" },
+        { "pvoidLid": "" },
+        { "pa": "100000" },
+        { "gamaw": "10000" },
+        { "gamam": "1.15" }
+      ]
+    }
+  }
+}
