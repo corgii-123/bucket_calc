@@ -23,4 +23,5 @@ contextBridge.exposeInMainWorld("electronAPI", {
     ipcRenderer.invoke("open:file", workspace, filename),
   openReferenceFile: (filename) =>
     ipcRenderer.invoke("open:reference", filename),
+  openHelperFile: (filename) => ipcRenderer.invoke("open:reference", filename),
 });

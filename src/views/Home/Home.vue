@@ -75,7 +75,9 @@
                   :addFileTimes="addFileTimes"
                 ></FileList>
                 <footer>
-                  <d-button variant="solid" icon="help">帮助</d-button>
+                  <d-button variant="solid" icon="help" @click="handleHelper"
+                    >帮助</d-button
+                  >
                   <d-button variant="solid" icon="exit" @click="handleClose"
                     >退出</d-button
                   >
@@ -153,6 +155,10 @@ const openReference = async (v: any) => {
   const res = await (window as any).electronAPI.openReferenceFile(v);
   loadingState.value = false;
   console.log(res);
+};
+
+const handleHelper = () => {
+  (window as any).electronAPI.openHelperFile("helper.pdf");
 };
 </script>
 
