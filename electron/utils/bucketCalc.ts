@@ -10,10 +10,7 @@ function calc1(data) {
     (Math.PI * (D * D) * h * gama) / 4 -
     Math.PI * D * h * alpha * (s$um + (k$ * h) / 2);
   const Hside = D * h * ((gama * h) / 2 + 2 * s$um + k$ * h);
-  const M$base =
-    Mlrp +
-    Hlrp * h -
-    ((D * (h * h)) / 3) * ((gama * h) / 2 + 2 * s$um + k$ * h);
+  const M$base = Mlrp + Hlrp * h;
   const e = M$base / V$base;
   const Aeff =
     2 *
@@ -80,13 +77,7 @@ function calc2(data) {
     ((Math.PI * D * gama * (h * h)) / 2) * K * Math.tan(deta$);
   const Kp = (1 + Math.sin(fai$$)) / (1 - Math.sin(fai$$));
   const Hside = ((gama * (h * h) * D) / 2) * (Kp - 1 / Kp);
-  const M$base =
-    Mlrp +
-    Hlrp * h -
-    ((gama * Math.pow(h, 3) * D) / 6) *
-      ((1 + Math.sin(fai$$)) / (1 - Math.sin(fai$$)) -
-        (1 - Math.sin(fai$$)) / 1 +
-        Math.sin(fai$$));
+  const M$base = Mlrp + Hlrp * h;
   const e = M$base / V$base;
   const Aeff =
     2 *

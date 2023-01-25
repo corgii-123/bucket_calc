@@ -3,9 +3,9 @@
     "load": {
       "name": "外部荷载设计值",
       "ticks": [
-        "外部竖向荷载V<sub>LRP</sub>（N）",
-        "外部水平向荷载H<sub>LRP</sub>（N）",
-        "外部倾覆荷载M<sub>LRP</sub>（N）"
+        "外部竖向荷载V<sub>LRP</sub>（kN）",
+        "外部水平向荷载H<sub>LRP</sub>（kN）",
+        "外部倾覆荷载M<sub>LRP</sub>（MN·m）"
       ],
       "refs": [{ "Vlrp": "" }, { "Hlrp": "" }, { "Mlrp": "" }]
     },
@@ -17,9 +17,9 @@
     "soil": {
       "name": "地基土体物理力学参数",
       "ticks": [
-        "泥面处土体不排水抗剪强度s<sub>um</sub>（Pa）",
-        "土体不排水强度随深度的变化梯度k（Pa/m）",
-        "土体浮容重γ’（N/m<sup>3</sup>）"
+        "泥面处土体不排水抗剪强度s<sub>um</sub>（kPa）",
+        "土体不排水强度随深度的变化梯度k（kPa/m）",
+        "土体浮容重γ’（kN/m<sup>3</sup>）"
       ],
       "refs": [{ "sum": "" }, { "k": "" }, { "gama": "" }]
     },
@@ -27,7 +27,7 @@
       "name": "其他参数及系数",
       "ticks": [
         "筒-土相互作用系数α",
-        "筒型基础浮重荷载W<sub>bucket</sub>（N）",
+        "筒型基础浮重荷载W<sub>bucket</sub>（kN）",
         "材料系数γ<sub>m</sub>"
       ],
       "refs": [{ "alpha": "" }, { "Wbucket": "" }, { "gamam": "1.25" }]
@@ -37,9 +37,9 @@
     "load": {
       "name": "外部荷载设计值",
       "ticks": [
-        "外部竖向荷载V<sub>LRP</sub>（N）",
-        "外部水平向荷载H<sub>LRP</sub>（N）",
-        "外部倾覆荷载M<sub>LRP</sub>（N）"
+        "外部竖向荷载V<sub>LRP</sub>（kN）",
+        "外部水平向荷载H<sub>LRP</sub>（kN）",
+        "外部倾覆荷载M<sub>LRP</sub>（MN·m）"
       ],
       "refs": [{ "Vlrp": "" }, { "Hlrp": "" }, { "Mlrp": "" }]
     },
@@ -52,7 +52,7 @@
       "name": "地基土体物理力学参数",
       "ticks": [
         "土体有效内摩擦角φ’（°）",
-        "土体浮容重γ’（N/m<sup>3</sup>）",
+        "土体浮容重γ’（kN/m<sup>3</sup>）",
         "水平向土压力系数K"
       ],
       "refs": [{ "fai": "" }, { "gama": "" }, { "K": "" }]
@@ -61,7 +61,7 @@
       "name": "其他参数及系数",
       "ticks": [
         "筒-土接触面外摩擦角δ（°）",
-        "筒型基础浮重荷载W<sub>bucket</sub>（N）",
+        "筒型基础浮重荷载W<sub>bucket</sub>（kN）",
         "材料系数γ<sub>m</sub>",
         "系数d<sub>γ</sub>"
       ],

@@ -79,6 +79,7 @@ async function createLoading() {
 
     resizable: false,
     transparent: true, // 窗口是否支持透明，如果想做高级效果最好为true
+    icon: join(process.env.PUBLIC, "marine.ico"),
   });
 
   loading.once("show", () => {

@@ -12,23 +12,9 @@
     </div>
   </header>
   <div class="layout" v-loading="loadingState">
-    <canvas
-      width="0"
-      height="0"
-      ref="paintArea"
-      style="background-color: lightslategrey"
-    ></canvas>
-    <d-result desc="施工中🔨🔨🔨。。。" class="paint-result">
-      <template #icon>
-        <d-icon name="insert-image" size="64px"></d-icon>
-      </template>
-      <template #title>这是将来的绘图区</template>
-      <template #extra>
-        <d-button id="primaryBtn" style="margin-right: 8px">
-          计划实现CAD导出
-        </d-button>
-      </template>
-    </d-result>
+    <div class="paint-result">
+      <canvas id="paintArea"></canvas>
+    </div>
     <div style="overflow-y: scroll; height: calc(100vh - 34px * 2)">
       <CalcFormVue
         v-model="refsData"
@@ -80,20 +66,11 @@ import { useResizeObserver } from "@vueuse/core";
 import staticData from "./static/calc.json";
 import titleMap from "../../static/title.json";
 import { dataFormat } from "./common/dataFormat";
+import paintHandler from "./common/paintHandler";
+import {fabric} from 'fabric'
 
 const { params, query } = useRoute();
 const loadingState = ref(false);
-const paintArea = ref(null);
-// onMounted(() => {
-//   const myCanvas = paintArea.value as any;
-//   const ctx = myCanvas.getContext("2d");
-//   useResizeObserver(document.documentElement, (entries) => {
-//     const entry = entries[0];
-//     const { width, height } = entry.contentRect;
-//     myCanvas.height = height * 0;
-//     myCanvas.width = width * 0;
-//   });
-// });
 
 const { id } = params as any;
 const { filename, path: filePath } = query as any;
@@ -205,6 +182,12 @@ onMounted(async () => {
         .replace(/设计.+要求/, "<b style='color: #dc143c'>$&</b>");
     }
   }
+
+  const myCanvas = new fabric.Canvas('paintArea')
+  // paint function
+  if (myCanvas) {
+    paintHandler(myCanvas, refsData);
+  }
 });
 
 const handleClose = () => {
@@ -227,6 +210,9 @@ const handleClose = () => {
   box-sizing: border-box;
   border-radius: 4px;
   position: sticky;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 header {
