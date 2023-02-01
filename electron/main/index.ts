@@ -123,22 +123,27 @@ app.on("activate", () => {
 
 // New window example arg: new windows url
 ipcMain.on("open-win", (_, ...args) => {
-  const [id, workSpace, filename] = args;
+  const [id, workSpace, filename, route, resultParams] = args;
   const childWindow = new BrowserWindow({
     icon: join(process.env.PUBLIC, "marine.ico"),
     webPreferences: {
       preload,
     },
     autoHideMenuBar: true,
+    width: 900,
   });
 
+  let tempUrl = `#${route}/${id}?path=${workSpace}&filename=${filename}`;
+  if (resultParams) {
+    childWindow.once("ready-to-show", () => {
+      childWindow.webContents.send("handle:resultParams", resultParams);
+    });
+  }
   if (process.env.VITE_DEV_SERVER_URL) {
-    childWindow.loadURL(
-      `${url}#calc/${id}?path=${workSpace}&filename=${filename}`
-    );
+    childWindow.loadURL(`${url}${tempUrl}`);
   } else {
     childWindow.loadFile(indexHtml, {
-      hash: `#calc/${id}?path=${workSpace}&filename=${filename}`,
+      hash: tempUrl,
     });
   }
 

@@ -107,4 +107,7 @@ export function calcIpcMain(win) {
   ipcMain.handle("export:excel", handleExport);
   ipcMain.handle("read:calcFile", handleRead);
   ipcMain.on("close:calc", () => win.close());
+  ipcMain.on("resize:win", (e, width, height) =>
+    win.setContentSize(width, height)
+  );
 }

@@ -8,7 +8,10 @@
         :data="refsData"
         :pop-position="['left']"
       >
-        <div v-for="v in Object.keys(data)" class="part">
+        <div
+          v-for="v in Object.keys(data).filter((v) => data[v].name)"
+          class="part"
+        >
           <span class="sub-title">{{ data[v].name }}</span>
           <d-form-item
             v-for="(tick, i) in data[v].ticks"
@@ -88,20 +91,19 @@ const check = (rule: any, value: any, callback: any) => {
 }
 
 ::-webkit-scrollbar {
-  height: 2px;
+  height: 3px;
 }
 
 :deep() .devui-input-slot__prepend {
-  padding: 4px 6px 2px 6px;
+  padding: 3px 6px 0px 6px;
 }
 
 .part {
-  margin: 5px 0;
+  margin: 2px 0;
 }
 
 .sub-title {
   font-weight: bold;
-  margin-bottom: 10px;
   padding-left: 4px;
   font-size: 12px;
 }
@@ -113,7 +115,7 @@ const check = (rule: any, value: any, callback: any) => {
 }
 
 .every-item {
-  margin-top: -24px;
+  margin-top: -26px;
   margin-bottom: 0;
 }
 </style>

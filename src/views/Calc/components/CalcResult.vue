@@ -8,6 +8,7 @@
             v.replace(/[^\u4e00-\u9fa5-]/, '<i>$&</i>') +
             ' = <b>' +
             result[idx] +
+            (data.units[idx] || '') +
             '</b>'
           "
         ></div>

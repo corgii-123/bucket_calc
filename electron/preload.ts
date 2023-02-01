@@ -6,8 +6,8 @@ contextBridge.exposeInMainWorld("electronAPI", {
     ipcRenderer.invoke("dialog:openFile", defaultDirectory),
   prepareCalc: (inputInfo: { id: string; workSpace: string; data: string }) =>
     ipcRenderer.invoke("update:prepareCalc", inputInfo),
-  openCalcWin: (id, workSpace, filename) => {
-    ipcRenderer.send("open-win", id, workSpace, filename);
+  openCalcWin: (id, workSpace, filename, route, resultParams) => {
+    ipcRenderer.send("open-win", id, workSpace, filename, route, resultParams);
   },
   exportExcel: (path: any, filename: any, data: any) =>
     ipcRenderer.invoke("export:excel", path, filename, data),
@@ -24,4 +24,6 @@ contextBridge.exposeInMainWorld("electronAPI", {
   openReferenceFile: (filename) =>
     ipcRenderer.invoke("open:reference", filename),
   openHelperFile: (filename) => ipcRenderer.invoke("open:reference", filename),
+  resizeWin: (width, height) => ipcRenderer.send("resize:win", width, height),
+  handleResult: (cb) => ipcRenderer.on("handle:resultParams", cb),
 });

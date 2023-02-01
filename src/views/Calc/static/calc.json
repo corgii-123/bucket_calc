@@ -31,7 +31,8 @@
         "材料系数γ<sub>m</sub>"
       ],
       "refs": [{ "alpha": "" }, { "Wbucket": "" }, { "gamam": "1.25" }]
-    }
+    },
+    "resultUnits": ["kN", "m", "m<sup>2</sup>", "kN", "kN"]
   },
   "submenu-1-item-2": {
     "load": {
@@ -71,12 +72,13 @@
         { "gamam": "1.15" },
         { "dgama": "1" }
       ]
-    }
+    },
+    "resultUnits": ["kN", "m", "m<sup>2</sup>", "kN", "kN"]
   },
   "submenu-2-item-1": {
     "load": {
       "name": "外部荷载设计值",
-      "ticks": ["外部水平荷载H<sub>LRP</sub>（N）"],
+      "ticks": ["外部水平荷载H<sub>LRP</sub>（kN）"],
       "refs": [{ "Hlrp": "" }]
     },
     "scale": {
@@ -87,9 +89,9 @@
     "soil": {
       "name": "地基土体物理力学参数",
       "ticks": [
-        "泥面处土体不排水抗剪强度s<sub>um</sub>（Pa）",
-        "土体不排水强度随深度的变化梯度k（Pa/m）",
-        "土体浮容重γ’（N/m<sup>3</sup>）"
+        "泥面处土体不排水抗剪强度s<sub>um</sub>（kPa）",
+        "土体不排水强度随深度的变化梯度k（kPa/m）",
+        "土体浮容重γ’（kN/m<sup>3</sup>）"
       ],
       "refs": [{ "sum": "" }, { "k": "" }, { "gama": "" }]
     },
@@ -97,14 +99,15 @@
       "name": "其他参数及系数",
       "ticks": ["材料系数γ<sub>m</sub>"],
       "refs": [{ "gamam": "1.25" }]
-    }
+    },
+    "resultUnits": ["kN", "kN", "kN"]
   },
   "submenu-2-item-2": {
     "load": {
       "name": "外部荷载设计值",
       "ticks": [
-        "外部竖向荷载V<sub>LRP</sub>（N）",
-        "外部水平向荷载H<sub>LRP</sub>（N）"
+        "外部竖向荷载V<sub>LRP</sub>（kN）",
+        "外部水平向荷载H<sub>LRP</sub>（kN）"
       ],
       "refs": [{ "Vlrp": "" }, { "Hlrp": "" }]
     },
@@ -117,7 +120,7 @@
       "name": "地基土体物理力学参数",
       "ticks": [
         "土体有效内摩擦角φ’（°）",
-        "土体浮容重γ’（N/m<sup>3</sup>）",
+        "土体浮容重γ’（kN/m<sup>3</sup>）",
         "水平向土压力系数K"
       ],
       "refs": [{ "fai": "" }, { "gama": "" }, { "K": "" }]
@@ -126,16 +129,17 @@
       "name": "其他参数及系数",
       "ticks": [
         "筒-土接触面外摩擦角δ（°）",
-        "筒型基础浮重荷载W<sub>bucket</sub>（N）",
+        "筒型基础浮重荷载W<sub>bucket</sub>（kN）",
         "材料系数γ<sub>m</sub>"
       ],
       "refs": [{ "deta": "" }, { "Wbucket": "" }, { "gamam": "1.15" }]
-    }
+    },
+    "resultUnits": ["kN", "kN", "kN"]
   },
   "submenu-3-item-1": {
     "load": {
       "name": "外部荷载设计值",
-      "ticks": ["外部上拔荷载V<sub>LRP</sub>（N）"],
+      "ticks": ["外部上拔荷载V<sub>LRP</sub>（kN）"],
       "refs": [{ "Vlrp": "" }]
     },
     "scale": {
@@ -146,9 +150,9 @@
     "soil": {
       "name": "地基土体物理力学参数",
       "ticks": [
-        "泥面处土体不排水抗剪强度s<sub>um</sub>（Pa）",
-        "土体不排水强度随深度的变化梯度k（Pa/m）",
-        "土体容重γ（N/m<sup>3</sup>）"
+        "泥面处土体不排水抗剪强度s<sub>um</sub>（kPa）",
+        "土体不排水强度随深度的变化梯度k（kPa/m）",
+        "土体容重γ（kN/m<sup>3</sup>）"
       ],
       "refs": [{ "sum": "" }, { "k": "" }, { "gama": "" }]
     },
@@ -156,11 +160,11 @@
       "name": "其他参数及系数",
       "ticks": [
         "筒-土相互作用系数α",
-        "筒型基础浮重荷载W<sub>bucket</sub>（N）",
+        "筒型基础浮重荷载W<sub>bucket</sub>（kN）",
         "水深h<sub>w</sub>（m）",
-        "空穴压力p<sub>void</sub>（Pa）",
-        "大气压强p<sub>a</sub>（Pa）",
-        "水体容重γ<sub>w</sub>（N/m<sup>3</sup>）",
+        "空穴压力p<sub>void</sub>（kPa）",
+        "大气压强p<sub>a</sub>（kPa）",
+        "水体容重γ<sub>w</sub>（kN/m<sup>3</sup>）",
         "材料系数γ<sub>m</sub>"
       ],
       "refs": [
@@ -172,12 +176,13 @@
         { "gamaw": "10000" },
         { "gamam": "1.25" }
       ]
-    }
+    },
+    "resultUnits": ["kN", "kN", "kN"]
   },
   "submenu-3-item-2": {
     "load": {
       "name": "外部荷载设计值",
-      "ticks": ["外部上拔荷载V<sub>LRP</sub>（N）"],
+      "ticks": ["外部上拔荷载V<sub>LRP</sub>（kN）"],
       "refs": [{ "Vlrp": "" }]
     },
     "scale": {
@@ -188,8 +193,8 @@
     "soil": {
       "name": "地基土体物理力学参数",
       "ticks": [
-        "土体容重γ（N/m<sup>3</sup>）",
-        "土体浮容重γ’（N/m<sup>3</sup>）",
+        "土体容重γ（kN/m<sup>3</sup>）",
+        "土体浮容重γ’（kN/m<sup>3</sup>）",
         "水平向土压力系数K"
       ],
       "refs": [{ "gama": "" }, { "gama$": "" }, { "K": "" }]
@@ -198,12 +203,12 @@
       "name": "其他参数及系数",
       "ticks": [
         "筒-土接触面外摩擦角δ（°）",
-        "筒型基础浮重荷载W<sub>bucket</sub>（N）",
+        "筒型基础浮重荷载W<sub>bucket</sub>（kN）",
         "水深h<sub>w</sub>（m）",
-        "基底裂缝处产生的空穴压力p<sub>void,base</sub>（Pa）",
-        "顶盖裂缝出产生的空穴压力p<sub>void,lid</sub>（Pa）",
-        "大气压强pa（Pa）",
-        "水体容重γ<sup>w</sup>（N/m<sup>3</sup>）",
+        "基底裂缝处产生的空穴压力p<sub>void,base</sub>（kPa）",
+        "顶盖裂缝出产生的空穴压力p<sub>void,lid</sub>（kPa）",
+        "大气压强pa（kPa）",
+        "水体容重γ<sup>w</sup>（kN/m<sup>3</sup>）",
         "材料系数γ<sub>m</sub>"
       ],
       "refs": [
@@ -216,6 +221,7 @@
         { "gamaw": "10000" },
         { "gamam": "1.15" }
       ]
-    }
+    },
+    "resultUnits": ["kN", "kN", "kN"]
   }
 }

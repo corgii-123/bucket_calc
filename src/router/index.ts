@@ -1,6 +1,7 @@
 import { createWebHashHistory, createRouter } from "vue-router";
 import HomeVue from "../views/Home/Home.vue";
 import CalcVue from "../views/Calc/Calc.vue";
+import Result from "../views/Result/Result.vue";
 
 const routes = [
   {
@@ -12,6 +13,11 @@ const routes = [
     path: "/calc/:id",
     name: "Calc",
     component: CalcVue,
+  },
+  {
+    path: "/result/:id",
+    name: "Result",
+    component: Result,
   },
 ];
 

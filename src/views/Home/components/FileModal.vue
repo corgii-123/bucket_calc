@@ -92,7 +92,8 @@ const handleConfirm = () => {
     await (window as any).electronAPI.openCalcWin(
       props.currentMenu,
       workspace.value,
-      filename.value + ".xlsx"
+      filename.value + ".xlsx",
+      "calc"
     );
     visible.value = false;
     workspace.value = workspace.value;

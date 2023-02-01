@@ -10,7 +10,7 @@ export const dataFormat = (
     [title, ...Object.values(refsData)],
   ];
   if (message) {
-    temp.push(["计算结果"], [message.replace(/<.+?>/g, "")]);
+    temp.push(["计算结果"], [message.replace(/<((?!br).)*?>/g, "")]);
   }
   return temp;
 };

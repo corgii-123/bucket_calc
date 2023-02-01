@@ -112,7 +112,8 @@ const handleEdit = async (v: string) => {
   await (window as any).electronAPI.openCalcWin(
     props.currentMenu,
     props.workspace,
-    v
+    v,
+    "calc"
   );
 };
 
