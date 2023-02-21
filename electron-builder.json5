@@ -2,25 +2,25 @@
  * @see https://www.electron.build/configuration/configuration
  */
 {
-  appId: "tianjin_university_liurun",
+  appId: 'tianjin_university_liurun',
   asar: true,
-  icon: "public/marine.ico",
+  icon: 'public/logo.ico',
   directories: {
-    output: "release/${version}",
+    output: 'release/${version}',
   },
-  files: ["dist-electron", "dist"],
+  files: ['dist-electron', 'dist'],
   mac: {
-    artifactName: "${productName}_${version}.${ext}",
-    target: ["dmg"],
+    artifactName: '${productName}_${version}.${ext}',
+    target: ['dmg'],
   },
   win: {
     target: [
       {
-        target: "nsis",
-        arch: ["x64"],
+        target: 'nsis',
+        arch: ['x64'],
       },
     ],
-    artifactName: "${productName}_${version}.${ext}",
+    artifactName: '${productName}_${version}.${ext}',
   },
   nsis: {
     oneClick: false,
@@ -28,6 +28,6 @@
     allowToChangeInstallationDirectory: true,
     deleteAppDataOnUninstall: false,
   },
-  extraResources: ["./extraResources/**"],
-  productName: "海上风电筒型基础承载力设计计算工具箱",
+  extraResources: ['./extraResources/**'],
+  productName: '海上风电筒型基础承载力设计计算工具箱',
 }

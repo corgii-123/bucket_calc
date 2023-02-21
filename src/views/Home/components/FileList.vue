@@ -1,67 +1,33 @@
 <template>
   <div v-if="currentMenu !== ''" class="list" v-loading="loadingState">
     <div class="add-file" @click="addNewCalc">
-      <d-avatar
-        :imgSrc="addFile"
-        :width="50"
-        :height="50"
-        :isRound="false"
-      ></d-avatar>
+      <d-avatar :imgSrc="addFile" :width="50" :height="50" :isRound="false"></d-avatar>
       <d-button size="md" variant="outline">点击添加计算</d-button>
     </div>
 
     <div v-for="v in excelFileList" class="add-file file">
-      <d-avatar
-        :imgSrc="sheet"
-        :width="100"
-        :height="100"
-        :isRound="false"
-      ></d-avatar>
+      <d-avatar :imgSrc="sheet" :width="100" :height="100" :isRound="false"></d-avatar>
 
       <strong style="font-size: 20px">{{ v }}</strong>
       <div style="display: flex; justify-content: center; align-items: center">
-        <d-button
-          style="flex: 1"
-          @click="handleEdit(v)"
-          size="sm"
-          icon="edit"
-          color="secondary"
-          >编辑</d-button
-        >
-        <d-button
-          @click="handleOpen(v)"
-          size="sm"
-          icon="connect"
-          color="primary"
-          title="excel打开"
-        ></d-button>
-        <d-button
-          @click="handleDelete(v)"
-          size="sm"
-          icon="delete"
-          color="danger"
-          title="删除"
-        ></d-button>
+        <d-button style="flex: 1" @click="handleEdit(v)" size="sm" icon="edit" color="secondary">编辑</d-button>
+        <d-button @click="handleOpen(v)" size="sm" icon="connect" color="primary" title="excel打开"></d-button>
+        <d-button @click="handleDelete(v)" size="sm" icon="delete" color="danger" title="删除"></d-button>
       </div>
     </div>
   </div>
   <div v-else class="empty">
-    <d-avatar
-      :imgSrc="marine"
-      :width="100"
-      :height="100"
-      :isRound="false"
-    ></d-avatar>
+    <d-avatar :imgSrc="ccs2" :width="180" :height="100" :isRound="false"></d-avatar>
     <b style="font-size: 20px">请选择右侧菜单面板</b>
   </div>
 </template>
 
 <script setup lang="ts">
-import addFile from "../../../assets/add-file.svg";
-import marine from "../../../assets/marine.svg";
-import sheet from "../../../assets/sheet.svg";
-import { ref, watch } from "vue";
-import titleMap from "../../../static/title.json";
+import addFile from '../../../assets/add-file.svg'
+import ccs2 from '../../../assets/ccs2.png'
+import sheet from '../../../assets/sheet.svg'
+import { ref, watch } from 'vue'
+import titleMap from '../../../static/title.json'
 
 const props = defineProps({
   currentMenu: {
@@ -75,60 +41,52 @@ const props = defineProps({
   addFileTimes: {
     type: Number,
   },
-});
-const emit = defineEmits(["openModal"]);
+})
+const emit = defineEmits(['openModal'])
 
 const addNewCalc = () => {
-  emit("openModal");
-};
+  emit('openModal')
+}
 
-const excelFileList = ref([]);
-const loadingState = ref(false);
+const excelFileList = ref([])
+const loadingState = ref(false)
 const changeState = async () => {
-  loadingState.value = true;
-  const res = await (window as any).electronAPI.readFileList(
-    props.workspace,
-    (titleMap as any)[props.currentMenu]
-  );
-  loadingState.value = false;
-  console.log(res);
+  loadingState.value = true
+  const res = await (window as any).electronAPI.readFileList(props.workspace, (titleMap as any)[props.currentMenu])
+  loadingState.value = false
+  console.log(res)
   if (!res) {
-    excelFileList.value = [];
+    excelFileList.value = []
   }
-  excelFileList.value = JSON.parse(res);
-};
+  excelFileList.value = JSON.parse(res)
+}
 
 watch(
   () => [props.workspace, props.currentMenu, props.addFileTimes],
   async (oldData, newData) => {
     if (oldData[2] !== newData[2]) {
-      await new Promise((resolve: any) => setTimeout(resolve, 3500));
+      await new Promise((resolve: any) => setTimeout(resolve, 3500))
     }
-    await changeState();
+    await changeState()
   }
-);
+)
 
 const handleEdit = async (v: string) => {
-  await (window as any).electronAPI.openCalcWin(
-    props.currentMenu,
-    props.workspace,
-    v,
-    "calc"
-  );
-};
+  await (window as any).electronAPI.openCalcWin(props.currentMenu, props.workspace, v, 'calc')
+}
 
 const handleDelete = async (v: string) => {
-  loadingState.value = true;
-  await (window as any).electronAPI.deleteFile(props.workspace, v);
-  await changeState();
-  loadingState.value = false;
-};
+  loadingState.value = true
+  await (window as any).electronAPI.deleteFile(props.workspace, v)
+  await changeState()
+  loadingState.value = false
+}
 
 const handleOpen = async (v: string) => {
-  loadingState.value = true;
-  await (window as any).electronAPI.openExcelFile(props.workspace, v);
-  loadingState.value = false;
-};
+  loadingState.value = true
+  await (window as any).electronAPI.openExcelFile(props.workspace, v)
+  loadingState.value = false
+}
 </script>
 
 <style scoped>
@@ -177,8 +135,7 @@ const handleOpen = async (v: string) => {
   padding: 10px;
 }
 .add-file.file:hover {
-  box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px,
-    rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+  box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
 }
 
 .empty {
