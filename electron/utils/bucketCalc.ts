@@ -244,7 +244,8 @@ function calc5(data) {
     Wbucket +
     ((Math.PI * D * D) / 4) * (pa + gamaw * hw - pvoid) +
     2 * alpha * Math.PI * D * h * (s$um + (k$ * h) / 2);
-  const Vult_t_slow = Wbucket + 2 * Math.PI * h * alpha * (s$um + (k$ * h) / 2);
+  const Vult_t_slow =
+    Wbucket + 2 * Math.PI * D * h * alpha * (s$um + (k$ * h) / 2);
   return {
     resultTitle: [
       "裂缝出现在基础底部下方的抗拔极限承载力V<sub>ult,t,base</sub>",
